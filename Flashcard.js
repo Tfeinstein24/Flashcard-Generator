@@ -7,7 +7,7 @@ function BasicCard(front, back) {
     this.front = front;
     this.back = back;
 }
-
+// Create new question object
 var collegeFootball = new BasicCard(
     "Who showed up at halftime to help the Mud Dogs win the Bourbon Bowl?", "Bobby Boucher"
 );
@@ -15,6 +15,24 @@ var collegeFootball = new BasicCard(
 console.log(collegeFootball.front);
 //Answer: Bobby Boucher
 console.log(collegeFootball.back);
+
+// Create a constructor for a Cloze deletion card
+function ClozeCard(partial, fullText) {
+    this.partial = partial;
+    this.fullText = fullText;
+};
+
+// Create new question
+var HtownTrivia = new ClozeCard(
+    "...is the stinkiest bayou in the city", "Brays Bayou is the stinkiest bayou in the city"
+);
+
+// ... is the stinkiest bayou in the city
+console.log(HtownTrivia.partial);
+// Brays Bayou is the stinkiest bayou in the city
+console.log(HtownTrivia.fullText);
+
+
 
 
 
