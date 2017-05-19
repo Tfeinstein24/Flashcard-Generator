@@ -18,21 +18,25 @@ console.log(collegeFootball.front);
 console.log(collegeFootball.back);
 };
 // Create a constructor for a Cloze deletion card
-function ClozeCard(partial, fullText) {
-    this.partial = partial;
-    this.fullText = fullText;
+function ClozeCard(fullText, cloze) {
+    this.cloze = cloze,
+    this.fullText = fullText,
+    // partial = modified text
+    this.partial = fullText.replace(cloze, "...")
 };
 
 // Create new question
 var callCloze = function() {
 var HtownTrivia = new ClozeCard(
-    "...is the stinkiest bayou in the city", "Brays Bayou is the stinkiest bayou in the city"
+    "Brays Bayou is the stinkiest bayou in the city", "Brays Bayou"
 );
 
 // ... is the stinkiest bayou in the city
-console.log(HtownTrivia.partial);
+console.log(HtownTrivia.cloze);
 // Brays Bayou is the stinkiest bayou in the city
 console.log(HtownTrivia.fullText);
+
+console.log(HtownTrivia.partial)
 };
 //Create switches to call different cards
 
