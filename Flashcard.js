@@ -1,6 +1,6 @@
 // Set up variables
-// install inquirer npm
 
+ var action = process.argv[2];
 
 // Create a constructor function that takes a front and back argument
 function BasicCard(front, back) {
@@ -8,6 +8,7 @@ function BasicCard(front, back) {
     this.back = back;
 }
 // Create new question object
+var callBasic = function() {
 var collegeFootball = new BasicCard(
     "Who showed up at halftime to help the Mud Dogs win the Bourbon Bowl?", "Bobby Boucher"
 );
@@ -15,7 +16,7 @@ var collegeFootball = new BasicCard(
 console.log(collegeFootball.front);
 //Answer: Bobby Boucher
 console.log(collegeFootball.back);
-
+};
 // Create a constructor for a Cloze deletion card
 function ClozeCard(partial, fullText) {
     this.partial = partial;
@@ -23,6 +24,7 @@ function ClozeCard(partial, fullText) {
 };
 
 // Create new question
+var callCloze = function() {
 var HtownTrivia = new ClozeCard(
     "...is the stinkiest bayou in the city", "Brays Bayou is the stinkiest bayou in the city"
 );
@@ -31,8 +33,18 @@ var HtownTrivia = new ClozeCard(
 console.log(HtownTrivia.partial);
 // Brays Bayou is the stinkiest bayou in the city
 console.log(HtownTrivia.fullText);
+};
+//Create switches to call different cards
 
+switch (action) {
+    case 'callCloze':
+        callCloze();
+        break;
 
+    case 'callBasic':
+        callBasic();
+        break;       
+};
 
 
 
